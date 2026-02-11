@@ -1,0 +1,16 @@
+import pandas as pd
+
+# Create dictionary object
+data = {
+    'Student_ID': [101, 102, 103, 104],
+    'Name': ['John', 'Emma', 'Liam', 'Olivia'],
+    'Age': [20, 21, 19, 22],
+    'Marks': [85, 90, 78, 88]
+}
+
+# Initialize DataFrame from dictionary
+df = pd.DataFrame(data)
+
+# Display DataFrame
+print("DataFrame Created from Dictionary:\n")
+print(df)
