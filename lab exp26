@@ -1,0 +1,45 @@
+import pandas as pd
+import matplotlib.pyplot as plt
+
+# Create sample dataset
+data = {
+    'Year': [2018, 2019, 2020, 2021, 2022],
+    'Sales': [15000, 18000, 17000, 20000, 22000],
+    'Profit': [3000, 4000, 3500, 5000, 6000],
+    'Expenses': [12000, 14000, 13500, 15000, 16000]
+}
+
+df = pd.DataFrame(data)
+
+print("Dataset:\n")
+print(df)
+
+# Create subplots (2 rows, 2 columns)
+fig, axes = plt.subplots(2, 2, figsize=(10,8))
+
+# Plot 1: Sales Line Plot
+axes[0, 0].plot(df['Year'], df['Sales'], marker='o')
+axes[0, 0].set_title("Sales Trend")
+axes[0, 0].set_xlabel("Year")
+axes[0, 0].set_ylabel("Sales")
+
+# Plot 2: Profit Line Plot
+axes[0, 1].plot(df['Year'], df['Profit'], marker='s')
+axes[0, 1].set_title("Profit Trend")
+axes[0, 1].set_xlabel("Year")
+axes[0, 1].set_ylabel("Profit")
+
+# Plot 3: Expenses Bar Plot
+axes[1, 0].bar(df['Year'], df['Expenses'])
+axes[1, 0].set_title("Expenses Overview")
+axes[1, 0].set_xlabel("Year")
+axes[1, 0].set_ylabel("Expenses")
+
+# Plot 4: Sales vs Profit Scatter Plot
+axes[1, 1].scatter(df['Sales'], df['Profit'])
+axes[1, 1].set_title("Sales vs Profit")
+axes[1, 1].set_xlabel("Sales")
+axes[1, 1].set_ylabel("Profit")
+
+plt.tight_layout()
+plt.show()
