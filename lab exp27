@@ -1,0 +1,25 @@
+import pandas as pd
+import matplotlib.pyplot as plt
+
+# Create sample data
+data = {
+    'Language': ['Python', 'Java', 'C++', 'JavaScript', 'C#'],
+    'Popularity (%)': [35, 20, 15, 25, 10]
+}
+
+df = pd.DataFrame(data)
+
+print("Programming Language Popularity Data:\n")
+print(df)
+
+# Create vertical bar chart
+plt.figure(figsize=(8,5))
+plt.bar(df['Language'], df['Popularity (%)'])
+
+# Add title and labels
+plt.title("Popularity of Programming Languages")
+plt.xlabel("Programming Language")
+plt.ylabel("Popularity (%)")
+
+plt.grid(axis='y')
+plt.show()
