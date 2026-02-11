@@ -1,0 +1,32 @@
+import pandas as pd
+import yfinance as yf
+import matplotlib.pyplot as plt
+
+# Ticker symbol for Alphabet Inc.
+ticker = "GOOG"
+
+# Define October 2016 date range
+start_date = "2016-10-01"
+end_date = "2016-10-31"
+
+# Download historical data
+df = yf.download(ticker, start=start_date, end=end_date)
+
+# Reset index to access Date column
+df.reset_index(inplace=True)
+
+print("Alphabet Inc. Stock Data - October 2016:\n")
+print(df.head())
+
+# Plot Closing Price Trend
+plt.figure(figsize=(10,6))
+plt.plot(df['Date'], df['Close'], marker='o')
+
+plt.title("Alphabet Inc. (GOOG) Stock Trend - October 2016")
+plt.xlabel("Date")
+plt.ylabel("Closing Price (USD)")
+plt.xticks(rotation=45)
+plt.grid(True)
+plt.tight_layout()
+
+plt.show()
