@@ -1,0 +1,21 @@
+import pandas as pd
+import numpy as np
+
+# Create a sample DataFrame
+data = {
+    'A': [10, 20, np.nan, 40],
+    'B': [np.nan, 25, 35, 45],
+    'C': [15, 30, 45, np.nan],
+    'D': [50, 60, 70, 80]
+}
+
+df = pd.DataFrame(data)
+
+print("Original DataFrame:\n")
+print(df)
+
+# Detect missing values (True/False)
+missing_values = df.isnull()
+
+print("\nMissing Values (True = Missing, False = Not Missing):\n")
+print(missing_values)
