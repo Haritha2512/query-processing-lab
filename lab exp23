@@ -1,0 +1,20 @@
+import pandas as pd
+import matplotlib.pyplot as plt
+
+# Read data from text file
+df = pd.read_csv("data.txt", header=None, names=["X", "Y"])
+
+print("Data from File:\n")
+print(df)
+
+# Create line plot
+plt.figure(figsize=(8,5))
+plt.plot(df["X"], df["Y"], marker='o')
+
+# Add title and labels
+plt.title("Line Graph from Text File Data")
+plt.xlabel("X Values")
+plt.ylabel("Y Values")
+plt.grid(True)
+
+plt.show()
