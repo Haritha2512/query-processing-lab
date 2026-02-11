@@ -1,0 +1,34 @@
+import pandas as pd
+import matplotlib.pyplot as plt
+
+# Create sample data
+data = {
+    'Language': ['Python', 'Java', 'C++', 'JavaScript', 'C#'],
+    'Popularity (%)': [35, 20, 15, 25, 10]
+}
+
+df = pd.DataFrame(data)
+
+print("Dataset:\n")
+print(df)
+
+# Define unique colors for each category
+colors = ['blue', 'green', 'red', 'purple', 'orange']
+
+# Create bar chart with unique colors
+plt.figure(figsize=(8,5))
+bars = plt.bar(df['Language'], df['Popularity (%)'], color=colors)
+
+# Add title and labels
+plt.title("Programming Language Popularity (Distinct Color Mapping)")
+plt.xlabel("Programming Language")
+plt.ylabel("Popularity (%)")
+
+# Add value labels on bars
+for bar in bars:
+    height = bar.get_height()
+    plt.text(bar.get_x() + bar.get_width()/2, height,
+             str(height), ha='center', va='bottom')
+
+plt.grid(axis='y')
+plt.show()
