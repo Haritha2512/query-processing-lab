@@ -1,0 +1,44 @@
+import numpy as np
+import pandas as pd
+import matplotlib.pyplot as plt
+
+# Sample data
+categories = ['Q1', 'Q2', 'Q3', 'Q4']
+
+product_A = np.array([20, 25, 30, 35])
+product_B = np.array([15, 18, 22, 28])
+
+# Error values (standard deviation example)
+error_A = [2, 3, 2, 4]
+error_B = [1, 2, 3, 2]
+
+# Create DataFrame (optional for clarity)
+df = pd.DataFrame({
+    'Category': categories,
+    'Product_A': product_A,
+    'Product_B': product_B
+})
+
+# Create stacked bar plot
+plt.figure(figsize=(8,6))
+
+# First layer
+plt.bar(categories, product_A, 
+        yerr=error_A, capsize=5,
+        label='Product A')
+
+# Second layer (stacked on top of A)
+plt.bar(categories, product_B, 
+        bottom=product_A,
+        yerr=error_B, capsize=5,
+        label='Product B')
+
+# Labels and title
+plt.title("Stacked Bar Plot with Error Bars")
+plt.xlabel("Quarter")
+plt.ylabel("Sales Value")
+
+plt.legend()
+plt.grid(axis='y')
+
+plt.show()
