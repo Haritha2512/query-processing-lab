@@ -1,0 +1,34 @@
+import numpy as np
+import pandas as pd
+import matplotlib.pyplot as plt
+
+# Generate random data
+np.random.seed(100)
+
+x = np.random.randint(10, 100, 30)
+y = np.random.randint(10, 100, 30)
+
+# Variable marker sizes (bubble size)
+sizes = np.random.randint(100, 1000, 30)
+
+df = pd.DataFrame({
+    'X': x,
+    'Y': y,
+    'Size': sizes
+})
+
+print("Sample Data:\n")
+print(df.head())
+
+# Create bubble chart
+plt.figure(figsize=(8,6))
+plt.scatter(df['X'], df['Y'],
+            s=df['Size'],     # Variable marker size
+            alpha=0.6)        # Transparency
+
+plt.title("Bubble Chart with Variable Marker Sizes")
+plt.xlabel("X Values")
+plt.ylabel("Y Values")
+
+plt.grid(True)
+plt.show()
