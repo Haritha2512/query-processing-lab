@@ -1,0 +1,27 @@
+import pandas as pd
+
+data = {
+    'employee_id': [101, 102, 101, 103, 104, 102, 105, 106, 106],
+    'job_id': ['IT_PROG', 'HR_REP', 'SA_REP', 'MK_MAN', 'IT_PROG',
+               'FI_ACCOUNT', 'SA_MAN', 'IT_PROG', 'SA_REP'],
+    'start_date': ['2018-01-01', '2019-03-15', '2020-06-01',
+                   '2017-07-10', '2016-09-20',
+                   '2021-02-01', '2018-11-11',
+                   '2015-05-05', '2019-08-08'],
+    'end_date': ['2019-12-31', '2020-03-14', '2022-05-30',
+                 '2019-07-09', '2018-09-19',
+                 '2023-01-31', '2020-11-10',
+                 '2017-05-04', '2021-08-07']
+}
+
+df = pd.DataFrame(data)
+
+print("Job History Data:\n")
+print(df)
+
+job_counts = df.groupby('employee_id').size()
+
+employees_multiple_jobs = job_counts[job_counts >= 2].index
+
+print("\nEmployees who have done two or more jobs in the past:")
+print(list(employees_multiple_jobs))
