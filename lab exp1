@@ -1,0 +1,18 @@
+import pandas as pd
+
+data = {
+    'employee_id': [101, 102, 103, 104, 105, 106, 107],
+    'employee_name': ['John', 'Emma', 'Liam', 'Olivia', 'Noah', 'Ava', 'Sophia'],
+    'department_id': [10, 20, 10, 30, 20, 40, 30],
+    'salary': [50000, 60000, 55000, 70000, 62000, 72000, 68000]
+}
+
+df = pd.DataFrame(data)
+
+print("Employee Data:\n")
+print(df)
+
+distinct_departments = df['department_id'].unique()
+
+print("\nDistinct Department IDs:")
+print(distinct_departments)
