@@ -1,0 +1,31 @@
+import numpy as np
+import pandas as pd
+import matplotlib.pyplot as plt
+
+# Generate random sample data
+np.random.seed(42)
+
+x = np.random.randint(10, 100, 20)
+y = np.random.randint(10, 100, 20)
+
+df = pd.DataFrame({'X': x, 'Y': y})
+
+print("Dataset:\n")
+print(df.head())
+
+# Create hollow marker scatter plot
+plt.figure(figsize=(8,6))
+
+plt.scatter(df['X'], df['Y'],
+            facecolors='none',      # Empty circles
+            edgecolors='darkgreen', # Circle border color
+            s=120,                  # Marker size
+            linewidths=1.5)
+
+# Titles and labels
+plt.title("Hollow Circular Distribution Scatter Plot")
+plt.xlabel("X Values")
+plt.ylabel("Y Values")
+
+plt.grid(True)
+plt.show()
