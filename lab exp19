@@ -1,0 +1,24 @@
+import pandas as pd
+
+# Creating a sample World Alcohol Consumption dataset
+data = {
+    'Year': [1986, 1986, 1986, 1987, 1987],
+    'WHO region': ['Western Pacific', 'Americas', 'Africa', 'Europe', 'Eastern Mediterranean'],
+    'Country': ['Viet Nam', 'Uruguay', "Côte d'Ivoire", 'Germany', 'Egypt'],
+    'Beverage Types': ['Wine', 'Other', 'Wine', 'Beer', 'Spirits'],
+    'Display Value': [0.00, 0.50, 1.62, 3.45, 0.12]
+}
+
+# Create DataFrame
+df = pd.DataFrame(data)
+
+print("World Alcohol Consumption Dataset:\n")
+print(df)
+
+# Display dimensions (shape)
+print("\nDimensions of the Dataset (Rows, Columns):")
+print(df.shape)
+
+# Extract column names
+print("\nColumn Names:")
+print(df.columns.tolist())
