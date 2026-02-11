@@ -1,0 +1,17 @@
+import pandas as pd
+
+# Create sample DataFrame
+data = {
+    'Name': ['John Smith', 'EMMA Watson', 'liam BROWN', 'Olivia Johnson']
+}
+
+df = pd.DataFrame(data)
+
+print("Original DataFrame:\n")
+print(df)
+
+# Swap character cases
+df['Name'] = df['Name'].str.swapcase()
+
+print("\nDataFrame After Swapping Cases:\n")
+print(df)
