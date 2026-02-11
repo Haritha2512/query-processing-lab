@@ -1,0 +1,25 @@
+import pandas as pd
+import matplotlib.pyplot as plt
+
+# Create sample data
+data = {
+    'Language': ['Python', 'Java', 'C++', 'JavaScript', 'C#'],
+    'Popularity (%)': [35, 20, 15, 25, 10]
+}
+
+df = pd.DataFrame(data)
+
+print("Programming Language Popularity Data:\n")
+print(df)
+
+# Create horizontal bar chart
+plt.figure(figsize=(8,5))
+plt.barh(df['Language'], df['Popularity (%)'])
+
+# Add title and labels
+plt.title("Programming Language Popularity Comparison")
+plt.xlabel("Popularity (%)")
+plt.ylabel("Programming Language")
+
+plt.grid(axis='x')
+plt.show()
