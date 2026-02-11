@@ -1,0 +1,25 @@
+import pandas as pd
+import numpy as np
+
+# Create sample DataFrame
+data = {
+    'Name': ['John', 'Emma', 'Liam', 'Olivia'],
+    'Age': [25, np.nan, 30, np.nan],
+    'Salary': [50000, 60000, np.nan, 70000]
+}
+
+df = pd.DataFrame(data)
+
+print("Original DataFrame:\n")
+print(df)
+
+# Find missing values
+print("\nMissing Values (True = Missing):\n")
+print(df.isnull())
+
+# Replace missing values
+df['Age'].fillna(df['Age'].mean(), inplace=True)      # Replace Age with mean
+df['Salary'].fillna(0, inplace=True)                  # Replace Salary with 0
+
+print("\nDataFrame After Replacing Missing Values:\n")
+print(df)
