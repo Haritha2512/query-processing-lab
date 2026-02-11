@@ -1,0 +1,24 @@
+import pandas as pd
+import yfinance as yf
+import matplotlib.pyplot as plt
+
+# Ticker symbol for Alphabet Inc.
+ticker = "GOOG"
+
+# Define date range
+start_date = "2023-01-01"
+end_date = "2023-03-31"
+
+# Download stock data
+df = yf.download(ticker, start=start_date, end=end_date)
+
+# Reset index to access Date column
+df.reset_index(inplace=True)
+
+# Display first few rows
+print("Stock Data:\n")
+print(df.head())
+
+# Create Scatter Plot (Volume vs Closing Price)
+plt.figure(figsize=(10,6))
+plt.scatter(df['Volume'], df['Close'])
