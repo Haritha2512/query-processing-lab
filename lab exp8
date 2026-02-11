@@ -1,0 +1,27 @@
+import pandas as pd
+
+# Creating sales_data table
+data = {
+    'order_id': [1001, 1002, 1003, 1004, 1005, 1006, 1007],
+    'item': ['Laptop', 'Mobile', 'Laptop', 'Tablet', 'Mobile', 'Tablet', 'Laptop'],
+    'unit_sold': [2, 5, 1, 3, 2, 4, 3],
+    'sale_value': [1200, 800, 1500, 600, 900, 700, 1800]
+}
+
+# Create DataFrame
+sales_data = pd.DataFrame(data)
+
+# Display original data
+print("Sales Data:\n")
+print(sales_data)
+
+# Create Pivot Table to calculate total units sold item-wise
+pivot_table = pd.pivot_table(
+    sales_data,
+    values='unit_sold',
+    index='item',
+    aggfunc='sum'
+)
+
+print("\nItem-wise Total Units Sold:\n")
+print(pivot_table)
