@@ -1,0 +1,25 @@
+import pandas as pd
+
+# Create sample dataset
+data = {
+    'Student_ID': [101, 102, 103, 104, 105],
+    'Name': ['John', 'Emma', 'Liam', 'Olivia', 'Noah'],
+    'Age': [20, 21, 19, 22, 23],
+    'Marks': [85, 90, 78, 88, 92],
+    'Department': ['CS', 'IT', 'CS', 'ECE', 'IT']
+}
+
+df = pd.DataFrame(data)
+
+print("Original Dataset:\n")
+print(df)
+
+# Select single column
+age_column = df['Age']
+print("\nSelected Column (Age):\n")
+print(age_column)
+
+# Select multiple columns
+selected_features = df[['Name', 'Marks']]
+print("\nSelected Columns (Name and Marks):\n")
+print(selected_features)
