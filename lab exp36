@@ -1,0 +1,35 @@
+import numpy as np
+import pandas as pd
+import matplotlib.pyplot as plt
+
+# Generate sample data
+np.random.seed(10)
+
+# Group A
+height_A = np.random.randint(150, 170, 15)
+weight_A = np.random.randint(50, 70, 15)
+
+# Group B
+height_B = np.random.randint(160, 180, 15)
+weight_B = np.random.randint(60, 80, 15)
+
+# Group C
+height_C = np.random.randint(155, 175, 15)
+weight_C = np.random.randint(55, 75, 15)
+
+# Create scatter plot
+plt.figure(figsize=(8,6))
+
+plt.scatter(height_A, weight_A, label='Group A')
+plt.scatter(height_B, weight_B, label='Group B')
+plt.scatter(height_C, weight_C, label='Group C')
+
+# Labels and Title
+plt.title("Height vs Weight Comparison (Three Groups)")
+plt.xlabel("Height (cm)")
+plt.ylabel("Weight (kg)")
+
+plt.legend()
+plt.grid(True)
+
+plt.show()
