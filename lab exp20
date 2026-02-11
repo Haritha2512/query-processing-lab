@@ -1,0 +1,21 @@
+import pandas as pd
+
+# Create sample DataFrame
+data = {
+    'Name': ['John Smith', 'Emma Watson', 'Liam Brown', 
+             'Olivia Smith', 'Noah Johnson']
+}
+
+df = pd.DataFrame(data)
+
+print("Original DataFrame:\n")
+print(df)
+
+# Given substring
+substring = "Smith"
+
+# Find index of rows containing the substring
+result = df[df['Name'].str.contains(substring, na=False)].index
+
+print(f"\nIndex positions containing substring '{substring}':")
+print(list(result))
