@@ -1,0 +1,44 @@
+import pandas as pd
+import matplotlib.pyplot as plt
+
+# Create sample dataset
+data = {
+    'Year': [2018, 2019, 2020, 2021, 2022],
+    'Product_A': [15000, 18000, 17000, 20000, 22000],
+    'Product_B': [12000, 14000, 16000, 19000, 21000],
+    'Product_C': [10000, 13000, 15000, 17000, 19500]
+}
+
+df = pd.DataFrame(data)
+
+print("Dataset:\n")
+print(df)
+
+# Create plot
+plt.figure(figsize=(10,6))
+
+plt.plot(df['Year'], df['Product_A'],
+         color='blue', marker='o', linestyle='-',
+         linewidth=2, label='Product A')
+
+plt.plot(df['Year'], df['Product_B'],
+         color='green', marker='s', linestyle='--',
+         linewidth=2, label='Product B')
+
+plt.plot(df['Year'], df['Product_C'],
+         color='red', marker='^', linestyle=':',
+         linewidth=2, label='Product C')
+
+# Add title and labels
+plt.title("Multi-Series Comparison of Product Sales", fontsize=14)
+plt.xlabel("Year", fontsize=12)
+plt.ylabel("Sales Amount", fontsize=12)
+
+# Add legend
+plt.legend()
+
+# Add grid
+plt.grid(True)
+
+plt.tight_layout()
+plt.show()
