@@ -1,0 +1,28 @@
+import pandas as pd
+import matplotlib.pyplot as plt
+
+# Create sample data
+data = {
+    'Year': [2018, 2019, 2020, 2021, 2022],
+    'Sales': [15000, 18000, 17000, 20000, 22000]
+}
+
+df = pd.DataFrame(data)
+
+print("Dataset:\n")
+print(df)
+
+# Create line plot
+plt.figure(figsize=(8,5))
+plt.plot(df['Year'], df['Sales'], marker='o')
+
+# Add labels and title
+plt.title("Yearly Sales Report")
+plt.xlabel("Year")
+plt.ylabel("Sales Amount")
+
+# Show grid
+plt.grid(True)
+
+# Display plot
+plt.show()
